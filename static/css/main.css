@@ -89,7 +89,7 @@
   margin: 0 auto;
 }
 
-.nav{
+.nav {
   display: flex;
 }
 
@@ -101,7 +101,30 @@
   color: inherit;
 }
 
-.nav__link--aci
+.nav__link--active {
+  background: var(--accent-colour);
+  color: var(--text-light);
+}
+
+.nav__link:not(:last-child){
+  margin-right: 1rem;
+}
+
+.nav__link:hover {
+  margin-bottom: -3px;
+  border-bottom: var(--border);
+}
+
+.nav__item {
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav__icon {
+  width: 1em;
+  height: 1em;
+}
   /* Button styles that we'll share across our site */
   .button {
     /* In order to easily position our buttons, we're making them block level elements */
