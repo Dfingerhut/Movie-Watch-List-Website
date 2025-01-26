@@ -76,7 +76,7 @@
 }
 
 .form__error, 
-.from__flash {
+.form__flash {
     display: block;
     padding: 0.5rem;
     color: var(--text);
@@ -84,7 +84,7 @@
 
 .form__error,
 .form__flash--danger {
-    background: var(--background-color);
+    background: var(--accent-colour);
 }
 
 .form__flash {
