@@ -1,0 +1,16 @@
+.button__add {
+    display: flex;
+    position: absolute;
+    bottom: 4rem;
+    right: 2rem;
+    height: 5rem;
+    width: 5rem;
+    border: var(--border);
+    border-radius: 50%;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.75rem;
+    align-items: center;
+    justify-content: center;
+}
