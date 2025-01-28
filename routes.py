@@ -45,6 +45,11 @@ def add_movie():
         
     return render_template("new_movie.html", title="Movies Watchlist - Add Movie", form=form)
 
+@pages.get("/movie/<string:_id>")
+def movie(_id : str):
+    movie = Movie(**current_app.db.movie.find_one({"_id": _id}))
+    return render_template("movie_details.html", movie=movie)
+    
 @pages.get("/toggle_theme")
 def toggle_theme():
     current_theme = session.get("theme")
