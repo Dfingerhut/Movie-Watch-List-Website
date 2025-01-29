@@ -55,5 +55,27 @@
     {% else %}
         <p class = "movie__description">No description yet. <a class = "link" href="#"> Add one? </a></p>
     {% endif %}
+
+    <div class="movie__meta">
+    {% if movie.cast %}
+        <div class="movie__casting">
+            <h2>Casting</h2>
+            <ul class="list">
+            {% for actor in movie.cast %}
+                <li class = "list__item">{{ actor }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+    {% if movie.series | length %}
+        <div class="movie__series">
+            <h2>Series</h2>
+            <ul class = "list">
+            {% for movie_in_series in movies.series %}
+                <li class = "list__item">{{ movie_in_series }}</li>
+            {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
 </div>
 {% endblock %}
