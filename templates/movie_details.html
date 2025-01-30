@@ -10,31 +10,31 @@
 <div class="container">
     <header class = "movie__header">
         <div class = "header__row"> 
-            <div class = "movie__name">
-                <h1>{{ movie.title}}</h1>
-                <div class = "movie__rating">
-                    {{ movie.rating }}
+                <div class = "movie__name">
+                    <h1>{{ movie.title}}</h1>
+                    <div class = "movie__rating">
+                        {{ movie.rating }}
+                    </div>
                 </div>
+            <div class = "movie__watched">
+                {% if movie.last_watched %}
+                    <p>
+                        Last watched: <a href="#" class="watched__link">
+                            <time datetime="{{ movie.last_watched }}">{{ movie.last_watched.strftime("%d %b %Y")}}>
+                        </a>
+                    </p>
+                {% else %}
+                    <p><a href="#" class="watched__link">Not Watched Yet.</a></p>
+                {% endif %}
+                    <a class = "movie__edit" href="#"> Edit {{pencil("pencil")}}</a>
             </div>
-        </div>
-        <div class = "movie__watched">
-            {% if movie.last_watched %}
-                <p>
-                    Last watched: <a href="#" class="watched__link">
-                        <time datetime="{{ movie.last_watched }}">{{ movie.last_watched.strftime("%d %b %Y")}}>
-                     </a>
-                </p>
-            {% else %}
-                <p><a href="#" class="watched__link">Not Watched Yet.</a></p>
-            {% endif %}
-                <a class = "movie__edit" href="#"> Edit {{pencil("pencil")}}</a>
-        </div>
-        <div class="header__row">
-            <ul class="movie__tags">
-            {% for tag in movie.tags %}
-                <li class="movie__tag">{{tag}}</li>
-            {% endfor %}
-            </ul>
+            <div class="header__row">
+                <ul class="movie__tags">
+                {% for tag in movie.tags %}
+                    <li class="movie__tag">{{tag}}</li>
+                {% endfor %}
+                </ul>
+            </div>
         </div>
     </header>
 
